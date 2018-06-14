@@ -28,6 +28,9 @@ class UsualPersonTest {
                 .isProgrammer(true)
                 .height(1.78f)
                 .broke(false)
+                .country(new UsualCountry("Russia", "RU"))
+                .contact(new UsualContact("EMAIL", "test@email.com"))
+                .contact(new UsualContact("TELEPHONE", "+1 (111) 111-11-11"))
                 .build();
     }
 }

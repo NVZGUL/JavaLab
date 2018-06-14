@@ -7,7 +7,7 @@ public interface Person {
 
     String getLastName();
 
-    //Country getCountry();
+    Country getCountry();
 
     int getAge();
 
@@ -17,5 +17,5 @@ public interface Person {
 
     boolean isBroke();
 
-    //java.util.List<Contact> getContacts();
+    java.util.List<Contact> getContacts();
 }

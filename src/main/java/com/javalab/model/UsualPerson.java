@@ -14,11 +14,11 @@ public class UsualPerson implements Person {
     int id;
     String firstName;
     String lastName;
-    //Country country;
+    Country country;
     int age;
     float height;
     boolean isProgrammer;
     boolean broke;
-    //@Singular
-    //List<Contact> contacts;
+    @Singular
+    List<Contact> contacts;
 }

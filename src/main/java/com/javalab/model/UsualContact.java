@@ -3,7 +3,7 @@ package com.javalab.model;
 import lombok.Value;
 
 @Value
-public class SimpleContact implements Contact {
+public class UsualContact implements Contact {
     String type;
     String value;
 }
