@@ -3,22 +3,25 @@ package com.javalab.model;
 import lombok.Builder;
 import lombok.Singular;
 import lombok.Value;
+import lombok.experimental.Wither;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Value
 @Builder
-@Component("person")
 public class UsualPerson implements Person {
-    int id;
+    long id;
     String firstName;
     String lastName;
     Country country;
     int age;
     float height;
     boolean isProgrammer;
+
+    @Wither
     boolean broke;
+
     @Singular
     List<Contact> contacts;
 }

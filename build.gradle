@@ -10,11 +10,22 @@ repositories {
 }
 
 dependencies {
-    compile 'org.springframework:spring-context:+'
-    compileOnly 'org.projectlombok:lombok:+'
-    testCompile 'org.sptingframework:spring-test:+',
+    compile 'org.springframework:spring-context:+',
+            'org.aspectj:aspectjrt:+',
+            'org.aspectj:aspectjweaver:+',
+            'aopalliance:aopalliance:+'
+
+    testCompile 'org.springframework:spring-test:+',
             'org.junit.jupiter:junit-jupiter-params:+',
             'org.hamcrest:java-humcrest:+',
             'org.mockito:mockito-all:+'
 
+    compileOnly 'org.projectlombok:lombok:+'
+}
+
+// type in terminal: gradle wrapper --gradle-version=4.8
+task wrapper(type: Wrapper) {
+    description = 'Generates gradlew[.bat] scripts'
+    gradleVersion = '4.8'
+    distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
 }

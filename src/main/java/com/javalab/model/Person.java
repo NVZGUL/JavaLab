@@ -1,7 +1,7 @@
 package com.javalab.model;
 
 public interface Person {
-    int getId();
+    long getId();
 
     String getFirstName();
 
@@ -17,5 +17,11 @@ public interface Person {
 
     boolean isBroke();
 
+    Person withBroke(boolean broke);
+
     java.util.List<Contact> getContacts();
+
+    default String getName() {
+        return String.format("%s %s", getFirstName(), getLastName());
+    }
 }

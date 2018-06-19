@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xmlns:c="http://www.springframework.org/schema/c"
        xmlns:util="http://www.springframework.org/schema/util"
-       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <!--<aop:aspectj-autoproxy/>-->
 
-    <!--<context:annotation-config/>-->
-    <!--<context:component-scan base-package="lab.ioc"/>-->
+    <bean class="com.javalab.model.ApuBar" id="bar"/>
+
+    <bean class="com.javalab.aop.Politeness" id="politeness"/>
+
     <bean class="com.javalab.model.UsualPerson" id="person">
         <constructor-arg name="id" value="1"/>
         <constructor-arg name="firstName" value="John"/>
@@ -22,14 +25,15 @@
     </bean>
 
     <bean class="com.javalab.model.UsualCountry" id="country">
+        <constructor-arg name="id" value="1"/>
         <constructor-arg name="codeName" value="RU"/>
         <constructor-arg name="name" value="Russia"/>
     </bean>
 
     <util:list id="contacts" value-type="com.javalab.model.Contact">
-        <bean class="com.javalab.model.UsualContact" c:type="EMAIL"
+        <bean class="com.javalab.model.UsualContact" c:id="1" c:type="EMAIL"
               c:value="test@email.com"/>
-        <bean class="com.javalab.model.UsualContact" c:type="TELEPHONE"
+        <bean class="com.javalab.model.UsualContact" c:id="2" c:type="TELEPHONE"
               c:value="+1 (111) 111-11-11"/>
     </util:list>
 </beans>
