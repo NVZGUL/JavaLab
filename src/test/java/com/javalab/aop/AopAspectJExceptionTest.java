@@ -38,7 +38,6 @@ class AopAspectJExceptionTest {
         String fromSystemOut = TestUtils.fromSystemOut(() ->
                 assertThrows(PersonBrokenException.class, () ->
                         bar.sellSquishee(person)));
-        System.out.println(fromSystemOut);
         assertTrue(fromSystemOut.contains("Hmmm..."), "Customer is not broken ");
     }
 }
